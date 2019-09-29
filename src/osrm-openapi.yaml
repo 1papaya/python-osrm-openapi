@@ -1,0 +1,71 @@
+openapi: 3.0.1
+info:
+  title: OSRM API v5.22.0
+  description: Open Source Routing Machine API
+  version: "1"
+servers:
+  - url: 'http://router.project-osrm.org'
+paths:
+  '/nearest/{version}/{profile}/{coordinates}.json':
+    get:
+      tags:
+        - OSRM
+      operationId: nearest
+      parameters:
+        ## ---- PATH DEFAULTS ----
+        - in: path
+          name: version
+          schema:
+            type: string
+          required: true
+        - in: path
+          name: profile
+          schema:
+            type: string
+          required: true
+        ## ---- QUERY DEFAULTS ----
+        - in: query
+          name: bearings
+          schema:
+            type: string
+        - in: query
+          name: radiuses
+          schema:
+            type: string
+        - in: query
+          name: generate_hints
+          schema:
+            type: boolean
+        - in: query
+          name: hints
+          schema:
+            type: string
+        - in: query
+          name: approaches
+          schema:
+            type: string
+        - in: query
+          name: exclude
+          schema:
+            type: string
+        ## ---- PATH ----
+        - in: path
+          name: coordinates
+          schema:
+            type: string
+          required: true
+        ## ---- QUERY ----
+        - in: query
+          name: number
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
+          required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
