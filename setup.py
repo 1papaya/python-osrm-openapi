@@ -13,7 +13,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "osrm-api"
-VERSION = "1.0.0"
+VERSION = "0.0.1"
 # To install the library, run the following
 #
 # python setup.py install
@@ -27,8 +27,8 @@ setup(
     name=NAME,
     version=VERSION,
     description="OSRM API v5.22.0",
-    author_email="",
-    url="",
+    author_email="1love1papaya@gmail.com",
+    url="https://github.com/1papaya/python-osrm-openapi",
     keywords=["OpenAPI", "OpenAPI-Generator", "OSRM API v5.22.0"],
     install_requires=REQUIRES,
     packages=find_packages(exclude=["test", "tests"]),
