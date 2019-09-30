@@ -10,6 +10,7 @@ if [ -d "${REPO_ID}" ]; then
 	echo "Refreshing repo ${REPO_ID}"
 	git -C "${REPO_ID}" pull
 else
+  echo "Cloning repo ${REPO_ID}"
 	git clone "https://github.com/${REPO_USER}/${REPO_ID}.git"
 fi
 
