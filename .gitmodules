@@ -1,0 +1,3 @@
+[submodule "osrm-openapi"]
+	path = osrm-openapi
+	url = https://github.com/1papaya/osrm-openapi.git
